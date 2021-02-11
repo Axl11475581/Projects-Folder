@@ -2,13 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Intro : MonoBehaviour
 
-    // Start is called before the first frame update
-    void Start ()
-    {
-        
-    }
         // Variable Type:
         
         // <scope accesor><data type><variable name> = <value>;
@@ -18,7 +12,4 @@ public class Intro : MonoBehaviour
         // value - bool - true, false, char 'a', string "a statement inside", int 23, float 23.43f
 
     // Update is called once per frame
-    void Update ()
-    {
-        
-    }
+ 
