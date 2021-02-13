@@ -23,7 +23,7 @@ print("\n")
 
 # 4 number manipulation
 
-print(min(8,2,3,4,5,89))
+print(min(8, 2, 3, 4, 5, 89))
 print("\n")
 
 # 5 number calculation
@@ -31,4 +31,7 @@ print("\n")
 print(round(52/36+pow(5,3)))
 print("\n")
 
-# 6 
+# 6 User input
+
+age = input('What is your age?: \n')
+print("my age is " + age)
