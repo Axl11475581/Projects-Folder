@@ -17,9 +17,19 @@ playerX = 370
 playerY = 480
 playerX_change = 0
 
+# Enemy position on screen and x/y movement variables
+enemyImg = pygame.image.load('ufo.png')
+enemyX = 370
+enemyY = 480
+enemyX_change = 0
+
 
 def player(x, y):  # Function to display the player on the screen
     screen.blit(playerImg, (x, y))
+
+
+def enemy(x, y):  # Function to display the enemy on the screen
+    screen.blit(enemyImg, (x, y))
 
 
 # Game Loop (for game window)
@@ -44,7 +54,11 @@ while running:
                 playerX_change = 0
 
     playerX += playerX_change
-    # Screen boundaries
-    
+    # Screen boundaries with player respawn
+    if playerX <= 0:
+        playerX = 736
+    elif playerX >= 736:
+        playerX = 0
+
     player(playerX, playerY)
     pygame.display.update()
