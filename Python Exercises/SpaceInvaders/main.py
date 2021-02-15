@@ -22,7 +22,7 @@ playerX_change = 0
 enemyImg = pygame.image.load('ufo.png')
 enemyX = random.randint(0, 736)
 enemyY = random.randint(50, 150)
-enemyX_change = 0.3
+enemyX_change = 0.2
 enemyY_change = 40
 
 
@@ -66,9 +66,11 @@ while running:
     enemyX += enemyX_change
     # Screen boundaries for the enemy + movement cycle
     if enemyX <= 0:
-        enemyX_change = 0.3
+        enemyX_change = 0.2
+        enemyY += enemyY_change
     elif enemyX >= 736:
-        enemyX_change = -0.3
+        enemyX_change = -0.2
+        enemyY += enemyY_change
 
     player(playerX, playerY)
     enemy(enemyX, enemyY)
