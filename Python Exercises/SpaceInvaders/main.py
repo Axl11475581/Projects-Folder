@@ -20,9 +20,10 @@ playerX_change = 0
 
 # Enemy position on screen with random package
 enemyImg = pygame.image.load('ufo.png')
-enemyX = random.randint(0, 800)
+enemyX = random.randint(0, 736)
 enemyY = random.randint(50, 150)
-enemyX_change = 0
+enemyX_change = 0.3
+enemyY_change = 40
 
 
 def player(x, y):  # Function to display the player on the screen
@@ -54,12 +55,20 @@ while running:
             if event.key == pygame.K_LEFT or event.key == pygame.K_RIGHT:
                 playerX_change = 0
 
+    # Screen boundaries with player respawn + player movement
     playerX += playerX_change
-    # Screen boundaries with player respawn
+
     if playerX <= 0:
         playerX = 736
     elif playerX >= 736:
         playerX = 0
+
+    enemyX += enemyX_change
+    # Screen boundaries for the enemy + movement cycle
+    if enemyX <= 0:
+        enemyX_change = 0.3
+    elif enemyX >= 736:
+        enemyX_change = -0.3
 
     player(playerX, playerY)
     enemy(enemyX, enemyY)
