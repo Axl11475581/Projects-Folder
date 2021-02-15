@@ -1,2 +1,2 @@
 language = "bash"
-run = "Primerejercicio.py"
+run="python3 Python Exercises/Python Basics/passwordchecker.py"
