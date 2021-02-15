@@ -1,4 +1,5 @@
 import pygame
+import random
 
 # Initialize the pygame
 pygame.init()
@@ -17,10 +18,10 @@ playerX = 370
 playerY = 480
 playerX_change = 0
 
-# Enemy position on screen and x/y movement variables
+# Enemy position on screen with random package
 enemyImg = pygame.image.load('ufo.png')
-enemyX = 370
-enemyY = 480
+enemyX = random.randint(0, 800)
+enemyY = random.randint(50, 150)
 enemyX_change = 0
 
 
@@ -61,4 +62,5 @@ while running:
         playerX = 0
 
     player(playerX, playerY)
+    enemy(enemyX, enemyY)
     pygame.display.update()
