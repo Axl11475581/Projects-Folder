@@ -51,7 +51,7 @@ def fire_bullet(x, y):
     global bullet_state
     bullet_state = "fire"
     screen.blit(bulletImg, (x + 16, y + 10))
-    
+
 
 # Game Loop (for game window)
 running = True
@@ -94,6 +94,11 @@ while running:
     elif enemyX >= 736:
         enemyX_change = -0.3
         enemyY += enemyY_change
+
+    # Bullet Movement
+    if bullet_state is "fire":
+        fire_bullet(playerX, bulletY)
+        bulletY -= bulletY_change
 
     player(playerX, playerY)
     enemy(enemyX, enemyY)
