@@ -28,6 +28,16 @@ enemyY = random.randint(50, 150)
 enemyX_change = 0.3
 enemyY_change = 40
 
+# Player's bullet position on screen with random package
+bulletImg = pygame.image.load('bullet.png')
+bulletX = 0
+bulletY = 480
+bulletX_change = 0
+bulletY_change = 40
+# Ready state: you can't see the bullet on the screen.
+# Fire state: the bullet is currently moving.
+bullet_state = "ready"
+
 
 def player(x, y):  # Function to display the player on the screen
     screen.blit(playerImg, (x, y))
@@ -36,7 +46,10 @@ def player(x, y):  # Function to display the player on the screen
 def enemy(x, y):  # Function to display the enemy on the screen
     screen.blit(enemyImg, (x, y))
 
-
+def fire_bullet(x, y):
+    global bullet_state
+    bullet_state = "fire"
+    screen.blit(bulletImg, (x + 16, y + 10))
 # Game Loop (for game window)
 running = True
 while running:
