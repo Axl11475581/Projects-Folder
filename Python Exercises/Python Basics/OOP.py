@@ -15,3 +15,26 @@ go beyond what Python just gives us (these data types) and create out own.
 Why is this useful? OOP is a paradigm, it's a way for us to think about our
 code and structure in a way that is easier to maintain, extend and write.
 """
+
+# Example of a created class
+""""
+self refers to the player character that is created in line 30. 
+The class PlayerCharacter is the blueprint of what we want to create,
+the basic attributes and the properties that the class has, the methods
+or actions that the class can do. Then with the blueprint ready you can 
+create different objects (in this case the player1 in line 30) in programming
+terms: We just instantiate the class PlayerCharacter in the player1 instance.
+"""
+
+
+class PlayerCharacter:
+    def __init__(self, name):
+        self.name = name
+
+    def run(self):
+        print('run')
+
+
+player1 = PlayerCharacter('Cindy')
+
+print(player1)
