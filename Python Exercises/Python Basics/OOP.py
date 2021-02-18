@@ -28,11 +28,15 @@ terms: We just instantiate the class PlayerCharacter in the player1 instance.
 
 
 class PlayerCharacter:
+    membership = True  # This is a Class Object Attribute, a static (unchangeable) characteristic.
+
     def __init__(self, name):
         self.name = name
 
     def run(self):
         print('run')
+
+# All the objects that are instantiated will have the Object Attribute
 
 
 player1 = PlayerCharacter('Cindy')
