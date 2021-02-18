@@ -36,9 +36,33 @@ class PlayerCharacter:
     def run(self):
         print('run')
 
+
 # All the objects that are instantiated will have the Object Attribute
 
 
 player1 = PlayerCharacter('Cindy')
 
 print(player1)
+
+
+# OOP Exercise 'Cat'
+# Given the below class:
+class Cat:
+    species = 'mammal'
+
+    def __init__(self, name, age):
+        self.name = name
+        self.age = age
+
+
+# 1 Instantiate the Cat object with 3 cats
+Bianca = Cat('Bianca', 6)
+Max = Cat('Max', 4)
+Lulu = Cat('Lulu', 2)
+
+
+# 2 Create a function that finds the oldest cat
+def oldest_cat():
+    pass
+
+# 3 Print out: "The oldest cat is x years old.". x will be the oldest cat age by using the function in #2
