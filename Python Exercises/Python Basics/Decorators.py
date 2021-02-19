@@ -1,3 +1,6 @@
+from time import time
+
+
 # Decorators work due to the ability of functions to act like variables, to act like first class citizens in Python
 # In short, decorators supercharge our functions, add extra functionality to them
 
@@ -22,6 +25,7 @@ def my_decorator(func):
         print('*********')
         func()
         print('*********')
+
     return wrap_func()
 
 
@@ -31,3 +35,17 @@ def hello():
 
 
 hello
+
+
+# Practical exercise - Creating a Decorator
+def performance(fn):
+    def wrapper(*args, **kwargs):
+        result = fn(*args, **kwargs)
+        return result
+
+    return wrapper()
+
+@performance
+def log_time():
+    for i in range(1000000):
+        i*5
