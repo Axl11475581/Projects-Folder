@@ -14,3 +14,20 @@ def greet2():
         return 5
 
     return func()
+
+
+# With the HOC ready, a decorator supercharges a function (wraps another function and enhances it)
+def my_decorator(func):
+    def wrap_func():
+        print('*********')
+        func()
+        print('*********')
+    return wrap_func()
+
+
+@my_decorator
+def hello():
+    print('hello')
+
+
+hello
