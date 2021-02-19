@@ -22,3 +22,9 @@ print(my_list4)
 my_list5 = [num**2 for num in range(0, 100) if num % 2 == 0]
 
 print(my_list5)
+"""
+The way it works is: we have an expression (num) of what we want to do with each
+item that we're iterating over, then we loop through using a for loop through an 
+iterable, we give it a variable that we're gonna act upon, and then if we want we 
+also have an option to add a conditional at the end to check before adding it to the list.
+"""
