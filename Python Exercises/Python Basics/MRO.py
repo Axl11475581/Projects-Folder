@@ -24,3 +24,8 @@ when you run a method, which one to run.
 """
 
 print(D.num)
+
+"""
+We get 1 because the MRO don't go D, B, A instead it goes D, B, C, and then A.
+MRO gets what is first in line.
+"""
