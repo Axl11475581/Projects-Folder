@@ -39,6 +39,8 @@ bulletY_change = 8
 # Fire state: the bullet is currently moving.
 bullet_state = "ready"
 
+score = 0
+
 
 def player(x, y):  # Function to display the player on the screen
     screen.blit(playerImg, (x, y))
@@ -114,6 +116,14 @@ while running:
     if bullet_state == "fire":
         fire_bullet(bulletX, bulletY)
         bulletY -= bulletY_change
+
+    # Collision
+    collision = is_collision(enemyX, enemyY, bulletX, bulletY)
+    if collision:
+        bulletY = 480
+        bullet_state = "ready"
+        score += 1
+        print(score)
 
     player(playerX, playerY)
     enemy(enemyX, enemyY)
