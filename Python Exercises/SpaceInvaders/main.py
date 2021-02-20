@@ -23,11 +23,19 @@ playerY = 480
 playerX_change = 0
 
 # Enemy position on screen with random package
-enemyImg = pygame.image.load('ufo.png')
-enemyX = random.randint(0, 735)
-enemyY = random.randint(50, 150)
-enemyX_change = 0.3
-enemyY_change = 40
+enemyImg = []
+enemyX = []
+enemyY = []
+enemyX_change = []
+enemyY_change = []
+num_of_enemies = 6
+
+for i in range(num_of_enemies):
+    enemyImg.append(pygame.image.load('ufo.png'))
+    enemyX.append(random.randint(0, 735))
+    enemyY.append(random.randint(50, 150))
+    enemyX_change.append(0.3)
+    enemyY_change.append(40)
 
 # Player's bullet position on screen with random package
 bulletImg = pygame.image.load('bullet.png')
@@ -99,14 +107,15 @@ while running:
     elif playerX >= 736:
         playerX = 0
 
-    enemyX += enemyX_change
     # Screen boundaries for the enemy + movement cycle
-    if enemyX <= 0:
-        enemyX_change = 0.3
-        enemyY += enemyY_change
-    elif enemyX >= 735:
-        enemyX_change = -0.3
-        enemyY += enemyY_change
+    for i in range(num_of_enemies):
+        enemyX[i] += enemyX_change[i]
+    if enemyX[i] <= 0:
+        enemyX_change[i] = 0.3
+        enemyY[i] += enemyY_change[i]
+    elif enemyX[i] >= 735:
+        enemyX_change[i] = -0.3
+        enemyY[i] += enemyY_change[i]
 
     # Bullet Movement
     if bulletY <= 0:
