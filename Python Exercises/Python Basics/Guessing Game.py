@@ -7,7 +7,8 @@ while True:
         guess = input('Guess a number 1 ~ 10: \n')
 
         if 0 < int(guess) < 11:
-            print('All good')
+            if guess == answer:
+                print('You are more intelligent that you look, eh?')
             break
         else:
             print('Hey! I said 1 ~ 10 smart face!')
