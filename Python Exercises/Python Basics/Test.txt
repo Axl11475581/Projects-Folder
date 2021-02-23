@@ -1,0 +1,4 @@
+This is a test for the Translator exercise.
+
+The objective is to translate this sentences to Japanese using
+an offline pypi package.
