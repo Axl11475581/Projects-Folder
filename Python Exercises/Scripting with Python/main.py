@@ -7,7 +7,7 @@ from PIL import Image, ImageFilter
 # filtered_img = img.convert('L')
 # filtered_img.save("grey.png", 'png')
 
-img = Image.open('astro.jpg')
+img = Image.open('Modified Images/astro.jpg')
 """
 new_img = img.resize((400, 400))
 new_img.save('astro_thumbnail.jpg')
