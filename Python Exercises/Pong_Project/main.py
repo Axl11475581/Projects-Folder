@@ -31,6 +31,8 @@ ball.shape("square")
 ball.color("white")
 ball.penup()
 ball.goto(0, 0)
+ball.dx = 0.25
+ball.dy = 0.25
 
 
 # move the paddles with the keyboard
@@ -68,3 +70,21 @@ window.onkeypress(paddle_b_down, "Down")
 # Main game loop
 while True:
     window.update()
+
+    # Ball movement
+    ball.setx(ball.xcor() + ball.dx)
+    ball.sety(ball.ycor() + ball.dy)
+
+    # Screen Boundaries
+    if ball.ycor() > 290:
+        ball.sety(290)
+        ball.dy *= -1
+    elif ball.ycor() < -290:
+        ball.sety(-290)
+        ball.dy *= -1
+    elif ball.xcor() > 390:
+        ball.goto(0, 0)
+        ball.dx *= -1
+    elif ball.xcor() < -390:
+        ball.goto(0, 0)
+        ball.dx *= -1
