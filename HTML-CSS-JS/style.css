@@ -2,6 +2,13 @@
     Property: value;
 } */
 
+body {
+    background-image: url(background.jpg);
+    background-size: cover;
+}
+
 h2 {
     color:red;
+    text-align: center;
+    border: 5px dashed purple;
 }
